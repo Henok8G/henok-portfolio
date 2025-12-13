@@ -1,12 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { href: "/", label: "Home", isPage: true },
   { href: "/about", label: "About", isPage: true },
-  { href: "#projects", label: "Projects", isPage: false },
+  { href: "/#projects", label: "Projects", isPage: false },
   { href: "/contact", label: "Contact", isPage: true },
 ];
 
@@ -15,6 +15,7 @@ const Navigation = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const { scrollY } = useScroll();
   const location = useLocation();
+  const navigate = useNavigate();
   
   const backgroundColor = useTransform(
     scrollY,
@@ -34,6 +35,30 @@ const Navigation = () => {
     });
     return () => unsubscribe();
   }, [scrollY]);
+
+  // Handle scroll to projects after navigation
+  useEffect(() => {
+    if (location.hash === "#projects") {
+      setTimeout(() => {
+        const element = document.getElementById("projects");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, [location]);
+
+  const handleProjectsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      const element = document.getElementById("projects");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/#projects");
+    }
+  };
 
   return (
     <>
@@ -83,6 +108,7 @@ const Navigation = () => {
                   ) : (
                     <a
                       href={link.href}
+                      onClick={handleProjectsClick}
                       className="relative text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-300 group"
                     >
                       {link.label}
@@ -147,7 +173,10 @@ const Navigation = () => {
                 ) : (
                   <a
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      handleProjectsClick(e);
+                      setIsOpen(false);
+                    }}
                     className="text-2xl font-heading font-semibold text-foreground hover:gradient-text transition-all duration-300"
                   >
                     {link.label}
