@@ -1,20 +1,20 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home", isPage: true },
+  { href: "/about", label: "About", isPage: true },
+  { href: "#projects", label: "Projects", isPage: false },
+  { href: "/contact", label: "Contact", isPage: true },
 ];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const location = useLocation();
   
   const backgroundColor = useTransform(
     scrollY,
@@ -44,15 +44,18 @@ const Navigation = () => {
         <nav className="container px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <motion.a
-              href="#"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+            <Link
+              to="/"
               className="font-heading text-xl font-bold gradient-text"
             >
-              HG
-            </motion.a>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                HG
+              </motion.span>
+            </Link>
 
             {/* Desktop nav */}
             <motion.ul
@@ -63,26 +66,46 @@ const Navigation = () => {
             >
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-300"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isPage ? (
+                    <Link
+                      to={link.href}
+                      className={`relative text-sm font-body transition-colors duration-300 group ${
+                        location.pathname === link.href
+                          ? "text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {link.label}
+                      <span className={`absolute -bottom-1 left-0 h-px bg-silver transition-all duration-300 ${
+                        location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                      }`} />
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="relative text-sm font-body text-muted-foreground hover:text-foreground transition-colors duration-300 group"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-silver transition-all duration-300 group-hover:w-full" />
+                    </a>
+                  )}
                 </li>
               ))}
             </motion.ul>
 
             {/* CTA button */}
-            <motion.a
-              href="#contact"
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="hidden md:inline-block px-6 py-2.5 bg-foreground text-background text-sm font-heading font-semibold rounded-lg hover:bg-silver transition-all duration-300"
             >
-              Hire Me
-            </motion.a>
+              <Link
+                to="/contact"
+                className="hidden md:inline-block px-6 py-2.5 bg-foreground text-background text-sm font-heading font-semibold rounded-lg hover:bg-silver transition-all duration-300"
+              >
+                Hire Me
+              </Link>
+            </motion.div>
 
             {/* Mobile menu button */}
             <button
@@ -113,26 +136,39 @@ const Navigation = () => {
                 animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
-                <a
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-heading font-semibold text-foreground hover:gradient-text transition-all duration-300"
-                >
-                  {link.label}
-                </a>
+                {link.isPage ? (
+                  <Link
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-heading font-semibold text-foreground hover:gradient-text transition-all duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-heading font-semibold text-foreground hover:gradient-text transition-all duration-300"
+                  >
+                    {link.label}
+                  </a>
+                )}
               </motion.li>
             ))}
           </ul>
-          <motion.a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => setIsOpen(false)}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.3, delay: 0.6 }}
             className="mt-12 px-8 py-4 bg-foreground text-background font-heading font-semibold rounded-lg"
           >
-            Hire Me
-          </motion.a>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+            >
+              Hire Me
+            </motion.span>
+          </Link>
         </nav>
       </motion.div>
     </>
