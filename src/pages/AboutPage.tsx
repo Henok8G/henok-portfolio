@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { Code, Palette, Lightbulb, Zap, ArrowRight } from "lucide-react";
+import { useEffect } from "react";
 
 const skills = {
   frontend: ["React", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
@@ -80,6 +81,10 @@ const specializations = [
 ];
 
 const AboutPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

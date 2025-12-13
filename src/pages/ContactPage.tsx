@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import { Mail, Phone, Github, Linkedin, Twitter, Send, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { useEffect } from "react";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/Henok8G", label: "GitHub" },
@@ -35,6 +36,10 @@ const handleSubmit = async (e: React.FormEvent) => {
     alert("Something went wrong");
   }
 };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
