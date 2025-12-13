@@ -28,10 +28,4 @@ It features smooth animations, responsive layouts, and a clean modern UI.
 - shadcn/ui
 - Framer Motion
 
----
 
-## 📂 Project Setup (Local Development)
-
-### 1️⃣ Clone the repository
-```bash
-git clone <YOUR_GITHUB_REPO_URL>
