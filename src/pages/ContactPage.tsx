@@ -3,20 +3,38 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
 import { Mail, Phone, Github, Linkedin, Twitter, Send, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/Henok8G", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/henok-getachew-zerihun/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/HakiChang17258", label: "Twitter" },
 ];
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      "service_l8zbev7",
+      "template_rb8hdnk",
+      {
+        email: formData.email,
+        message: formData.message,
+      },
+      "cNpVP0GWrlMAjydi6"
+    );
+
+    alert("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    alert("Something went wrong");
+  }
+};
 
   return (
     <div className="min-h-screen bg-background">
@@ -121,10 +139,10 @@ const ContactPage = () => {
                           Email
                         </span>
                         <a
-                          href="mailto:hello@henok.dev"
+                          href="https://mail.google.com/mail/?view=cm&fs=1&to=someone@example.com"
                           className="text-foreground font-body hover:text-silver transition-colors duration-300"
                         >
-                          hello@henok.dev
+                          henryman143143@gmial.com
                         </a>
                       </div>
                     </div>
@@ -150,7 +168,7 @@ const ContactPage = () => {
                           href="tel:+1234567890"
                           className="text-foreground font-body hover:text-silver transition-colors duration-300"
                         >
-                          +1 (234) 567-890
+                          +251 924 43 1809
                         </a>
                       </div>
                     </div>
@@ -173,7 +191,7 @@ const ContactPage = () => {
                           Location
                         </span>
                         <span className="text-foreground font-body">
-                          Available Worldwide
+                          Addis Ababa, Ethiopia
                         </span>
                       </div>
                     </div>

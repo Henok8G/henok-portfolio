@@ -9,7 +9,7 @@ const skills = {
   uiux: ["Figma", "User Research", "Wireframing", "Prototyping", "Design Systems", "Responsive Design"],
   tools: ["Git", "VS Code", "Node.js", "Vercel", "GitHub", "Lovable AI"],
   softSkills: ["Problem Solving", "Communication", "Collaboration", "Time Management", "Adaptability"],
-  other: ["SEO", "Performance Optimization", "Prompt Engineering", "Brand Strategy", "Copywriting"],
+  other: ["Performance Optimization", "Prompt Engineering", "Brand Strategy", "Copywriting"],
 };
 
 const tools = [
@@ -25,31 +25,31 @@ const tools = [
 
 const journey = [
   {
-    year: "2024",
+    year: "2025",
     title: "Lovable AI Expert",
     description: "Mastered AI-powered development tools and prompt engineering for rapid prototyping.",
     type: "Growth",
   },
   {
-    year: "2023",
+    year: "2025",
     title: "Full-Stack Expansion",
     description: "Extended skills to include backend development with Node.js and database management.",
     type: "Learning",
   },
   {
-    year: "2022",
+    year: "2025",
     title: "Freelance Journey",
     description: "Started taking on freelance projects, delivering UI/UX design and web development solutions.",
     type: "Freelance",
   },
   {
-    year: "2021",
+    year: "2024",
     title: "UI/UX Specialization",
     description: "Deep-dived into user experience design, learning Figma and design thinking principles.",
     type: "Design",
   },
   {
-    year: "2020",
+    year: "2024",
     title: "Self-Taught Beginning",
     description: "Started the journey as a self-taught developer, learning HTML, CSS, and JavaScript.",
     type: "Start",
@@ -157,11 +157,11 @@ const AboutPage = () => {
               <p>
                 As a problem solver at heart, I approach every project with curiosity and a 
                 commitment to finding elegant solutions. Whether I'm architecting a complex web 
-                application or refining the user flow of a mobile interface, I believe in the 
+                application or refining the user flow of a mobile interface. I believe in the 
                 power of thoughtful design to transform how people interact with technology.
               </p>
               <p>
-                My focus on brand-centered thinking means I don't just build products—I help 
+                My focus on brand-centered thinking means I don't just build products I help 
                 create cohesive digital identities that resonate with users and stand out in 
                 a crowded digital landscape.
               </p>

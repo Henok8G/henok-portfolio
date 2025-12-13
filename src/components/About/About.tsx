@@ -62,8 +62,8 @@ const About = () => {
               className="text-lg text-muted-foreground font-body leading-relaxed"
             >
               I'm a passionate web developer and UI/UX designer with a keen eye for detail 
-              and a love for creating beautiful, functional digital experiences. With expertise 
-              spanning front-end development, full-stack solutions, and brand design, I bring 
+              and a love for creating beautiful and functional digital experiences. With expertise 
+              spanning front-end development, full-stack solutions and brand design. I bring 
               ideas to life through clean code and thoughtful design.
             </motion.p>
 
@@ -73,9 +73,9 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-muted-foreground font-body leading-relaxed"
             >
-              My approach combines technical precision with creative vision, ensuring every 
+              My approach combines technical precision with creative vision ensuring every 
               project not only looks stunning but performs flawlessly. I believe in the power 
-              of minimalism and elegance in design, creating interfaces that are intuitive 
+              of minimalism and elegance in design creating interfaces that are intuitive 
               and memorable.
             </motion.p>
           </motion.div>
@@ -90,9 +90,9 @@ const About = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6">
               {[
-                { number: "3+", label: "Years Experience" },
-                { number: "50+", label: "Projects Completed" },
-                { number: "30+", label: "Happy Clients" },
+                { number: "1+", label: "Years Experience" },
+                { number: "10+", label: "Projects Completed" },
+                { number: "11+", label: "Happy Clients" },
                 { number: "100%", label: "Dedication" },
               ].map((stat, index) => (
                 <motion.div

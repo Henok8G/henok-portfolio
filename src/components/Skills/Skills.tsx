@@ -12,12 +12,12 @@ const skillCategories = [
   {
     title: "UI/UX",
     icon: Palette,
-    skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "User Research", "Design Systems", "Responsive Design"],
+    skills: ["Figma", "Wireframing", "Prototyping", "User Research", "Design Systems", "Responsive Design"],
   },
   {
     title: "Tools",
     icon: Wrench,
-    skills: ["Git", "VS Code", "Node.js", "Vercel", "Supabase", "Lovable AI", "ChatGPT", "Notion"],
+    skills: ["Git", "VS Code", "Node.js", "Vercel", "Lovable AI", "ChatGPT", "Notion"],
   },
   {
     title: "Soft Skills",

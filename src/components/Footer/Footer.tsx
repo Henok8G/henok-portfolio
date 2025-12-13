@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Dribbble } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Dribbble, href: "#", label: "Dribbble" },
+  { icon: Github, href: "https://github.com/Henok8G", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/henok-getachew-zerihun/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/HakiChang17258", label: "Twitter" },
+  { icon: Dribbble, href: "https://dribbble.com/henok-getachew", label: "Dribbble" },
 ];
 
 const Footer = () => {
@@ -39,7 +39,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-muted-foreground font-body max-w-md"
           >
-            Creating digital experiences that inspire, engage, and leave lasting impressions.
+            Creating digital experiences that inspire, engage and leave lasting impressions.
           </motion.p>
 
           {/* Social links */}

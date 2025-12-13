@@ -69,7 +69,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="text-lg md:text-xl text-muted-foreground font-body font-light max-w-xl"
             >
-              "Let's make this project special and successful"
+              Let's make this project special and successful together.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -106,12 +106,16 @@ const Hero = () => {
               <div className="w-48 h-72 md:w-56 md:h-80 lg:w-64 lg:h-96 rounded-2xl bg-gradient-card border border-border/30 overflow-hidden gradient-border animate-subtle-float">
                 <div className="absolute inset-0 geometric-pattern-alt opacity-30" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-muted-foreground/50 font-body text-sm">Your Photo</span>
+                  <img src="/images/profile.HEIC"   // path to your image in public/
+                             alt="Henok Getachew"
+                              width={200}                 // adjust size as needed
+                          height={300}                // adjust size as needed
+                       className="rounded-2xl object-cover w-full h-full"/>
                 </div>
               </div>
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border border-silver/10 rounded-xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 border border-silver/5 rounded-xl" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-xl bg-silver/25" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl bg-silver/10" />
             </div>
           </motion.div>
         </div>

@@ -6,45 +6,39 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Booking Platform",
     category: "Web Development",
-    description: "A modern e-commerce solution with seamless checkout experience and real-time inventory management.",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "SaaS Dashboard",
-    category: "UI/UX Design",
-    description: "Comprehensive analytics dashboard with data visualization and user management features.",
-    link: "#",
+    description: "A modern booking solution with seamless checkout experience and real-time customer management.",
+    link: "https://cmac-barbershop.vercel.app/",
+    img: "public/images/booking.png",
   },
   {
     id: 3,
-    title: "Brand Identity",
-    category: "Branding",
-    description: "Complete brand identity design including logo, color palette, and visual guidelines.",
-    link: "#",
+    title: "Evnet Branding Designs",
+    category: "Design",
+    description: "Complete brand identity design including color palette and visual guidelines.",
+    link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
   },
   {
     id: 4,
     title: "Portfolio Website",
     category: "Web Design",
-    description: "Elegant portfolio showcasing creative work with smooth animations and interactions.",
-    link: "#",
+    description: "portfolio showcasing creative work with smooth animations and interactions.",
+    link: "https://henokgprotfolio.netlify.app/",
   },
   {
     id: 5,
-    title: "Mobile App UI",
+    title: "Wenbsite and Mobile App UI",
     category: "UI/UX Design",
     description: "Intuitive mobile application interface design focused on user experience and accessibility.",
-    link: "#",
+    link: "https://www.figma.com/design/8qL2kgNcPiSIiThc28yQaS/Henok-s-Portfolio?node-id=0-1&t=NXD5Z0Z5ZwQGKNp7-1",
   },
   {
     id: 6,
-    title: "Landing Page",
-    category: "Frontend",
-    description: "High-converting landing page with optimized performance and stunning visuals.",
-    link: "#",
+    title: "Event designs",
+    category: "Graphics Design",
+    description: "Creative graphic designs including vibrant banners and eye-catching flyers for the Ashenda event",
+    link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
   },
 ];
 
@@ -56,8 +50,7 @@ const Projects = () => {
   return (
     <section id="projects" ref={ref} className="relative section-spacing overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 geometric-pattern opacity-20" />
+
 
       <div className="container relative z-10 px-6 lg:px-12">
         {/* Header */}

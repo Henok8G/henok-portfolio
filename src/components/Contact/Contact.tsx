@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, Github, Linkedin, Twitter, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const socialLinks = [
   { icon: Github, href: "#", label: "GitHub" },
@@ -14,11 +15,29 @@ const Contact = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    await emailjs.send(
+      "service_l8zbev7",
+      "template_rb8hdnk",
+      {
+        email: formData.email,
+        message: formData.message,
+      },
+      "cNpVP0GWrlMAjydi6"
+    );
+
+    alert("Message sent successfully!");
+    setFormData({ email: "", message: "" });
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    alert("Something went wrong");
+  }
+};
+
+
 
   return (
     <section id="contact" ref={ref} className="relative section-spacing overflow-hidden">
@@ -114,10 +133,10 @@ const Contact = () => {
                       Email
                     </span>
                     <a
-                      href="mailto:hello@henok.dev"
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=someone@example.com"
                       className="text-foreground font-body hover:text-silver transition-colors duration-300"
                     >
-                      hello@henok.dev
+                      henryman143143@gmail.com
                     </a>
                   </div>
                 </div>
@@ -134,10 +153,10 @@ const Contact = () => {
                       Phone
                     </span>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+251924431809"
                       className="text-foreground font-body hover:text-silver transition-colors duration-300"
                     >
-                      +1 (234) 567-890
+                      +251 924 43 1809
                     </a>
                   </div>
                 </div>
