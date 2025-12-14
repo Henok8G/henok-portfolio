@@ -14,10 +14,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "Evnet Branding Designs",
+    title: "Event Branding Designs",
     category: "Design",
     description: "Complete brand identity design including color palette and visual guidelines.",
     link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
+    img: "public/images/event.png",
   },
   {
     id: 4,
@@ -25,13 +26,15 @@ const projects = [
     category: "Web Design",
     description: "portfolio showcasing creative work with smooth animations and interactions.",
     link: "https://henokgprotfolio.netlify.app/",
+    img: "public/images/portfolio.png",
   },
   {
     id: 5,
-    title: "Wenbsite and Mobile App UI",
+    title: "Website and Mobile App UI",
     category: "UI/UX Design",
     description: "Intuitive mobile application interface design focused on user experience and accessibility.",
     link: "https://www.figma.com/design/8qL2kgNcPiSIiThc28yQaS/Henok-s-Portfolio?node-id=0-1&t=NXD5Z0Z5ZwQGKNp7-1",
+    img: "public/images/uiux.png",
   },
   {
     id: 6,
@@ -39,6 +42,7 @@ const projects = [
     category: "Graphics Design",
     description: "Creative graphic designs including vibrant banners and eye-catching flyers for the Ashenda event",
     link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
+    img: "public/images/Graphics.png",
   },
 ];
 
@@ -81,8 +85,15 @@ const Projects = () => {
               onMouseLeave={() => setHoveredId(null)}
               className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
             >
+
+              {/* Project image */}
+            <img
+              src={project.img}
+              alt={project.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
               {/* Background placeholder */}
-              <div className="absolute inset-0 bg-gradient-card border border-border/30" />
+               <div className="absolute inset-0 bg-black/40" />
               <div className="absolute inset-0 geometric-pattern-alt opacity-50" />
               
               {/* Overlay */}
