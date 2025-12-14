@@ -10,7 +10,7 @@ const projects = [
     category: "Web Development",
     description: "A modern booking solution with seamless checkout experience and real-time customer management.",
     link: "https://cmac-barbershop.vercel.app/",
-    img: "public/images/booking.png",
+    img: "/images/booking.png",
   },
   {
     id: 3,
@@ -18,7 +18,7 @@ const projects = [
     category: "Design",
     description: "Complete brand identity design including color palette and visual guidelines.",
     link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
-    img: "public/images/event.png",
+    img: "/images/event.png",
   },
   {
     id: 4,
@@ -26,7 +26,7 @@ const projects = [
     category: "Web Design",
     description: "portfolio showcasing creative work with smooth animations and interactions.",
     link: "https://henokgprotfolio.netlify.app/",
-    img: "public/images/portfolio.png",
+    img: "/images/portfolio.png",
   },
   {
     id: 5,
@@ -34,7 +34,7 @@ const projects = [
     category: "UI/UX Design",
     description: "Intuitive mobile application interface design focused on user experience and accessibility.",
     link: "https://www.figma.com/design/8qL2kgNcPiSIiThc28yQaS/Henok-s-Portfolio?node-id=0-1&t=NXD5Z0Z5ZwQGKNp7-1",
-    img: "public/images/uiux.png",
+    img: "/images/uiux.png",
   },
   {
     id: 6,
@@ -42,7 +42,7 @@ const projects = [
     category: "Graphics Design",
     description: "Creative graphic designs including vibrant banners and eye-catching flyers for the Ashenda event",
     link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
-    img: "public/images/Graphics.png",
+    img: "/images/Graphics.png",
   },
 ];
 
