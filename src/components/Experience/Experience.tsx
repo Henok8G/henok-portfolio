@@ -43,6 +43,30 @@ const experiences = [
     date: "2024",
     tools: ["HTML/CSS", "JavaScript", "Animations"],
   },
+    {
+    id: 7,
+    title: "Dynamic Page Specialist",
+    type: "Web Development",
+    description: "Created high-responsive Dynamic pages for various clients using modern web technologies.",
+    date: "2025",
+    tools: ["React", "Next.js", "Animations", "Tailwind CSS"],
+  },
+      {
+    id: 8,
+    title: "System Development Specialist",
+    type: "System Development",
+    description: "Converted a big problem related to attendance managment into a simple, owner focused web app to easily manage employees, track attendance and control access via an intuitive dashboard.",
+    date: "2025",
+    tools: ["React", "Next.js","Vite.js", "Supabase", "Tailwind CSS"],
+  },
+      {
+    id: 9,
+    title: "T-shirt mockup Designs",
+    type: "Graphics Design",
+    description: "Created a T-shirt mockup sleek compression gym sweater: breathable, moisture wicking fabric, targeted mesh and a subtle Nevu wordmark.",
+    date: "2025",
+    tools: ["Photoshop", "Figma", "Canva"],
+  },
 ];
 
 const Experience = () => {

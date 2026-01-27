@@ -44,6 +44,30 @@ const projects = [
     link: "https://dribbble.com/shots/26395010-Traditional-Event-In-Addis-Ababa-Ashenda-Design?utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Traditional%20Event%20In%20Addis%20Ababa%20%22Ashenda%22%20Design.&utm_medium=Social_Share",
     img: "/images/Graphics.png",
   },
+   {
+    id: 7,
+    title: "T-Shirt Mockup Designs",
+    category: "Graphics Design",
+    description: "Nevu T-shirt mockup sleek compression gym sweater: breathable, moisture-wicking fabric, targeted mesh, and a subtle Nevu wordmark.",
+    link: "https://dribbble.com/shots/27025027-Nevu-T-shirt-Mockups?new_shot_upload=true&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Nevu%20T-shirt%20Mockups&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=henok-getachew&utm_content=Nevu%20T-shirt%20Mockups&utm_medium=Social_Share",
+    img: "/images/tshirt1.png",
+  },
+     {
+    id: 8,
+    title: "Attendance Managment System",
+    category: "System Development",
+      description: "Attendance Management System simple, owner-focused web app to easily manage employees, track attendance and control access via an intuitive dashboard.",
+    link: "https://owner-dashboard-delta.vercel.app",
+    img: "/images/cmac.png",
+  },
+       {
+    id: 9,
+    title: "Staff QR Code scanner",
+    category: "System Development",
+      description: "Staff QR Code Scanner mobile friendly web scanner integrated with the Attendance Management System staff scan daily QR codes to record attendance quickly and easily.",
+    link: "https://staff-scanning-system.vercel.app",
+    img: "/images/staffscanner.png",
+  },
 ];
 
 const Projects = () => {
