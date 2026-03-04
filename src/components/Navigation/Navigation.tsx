@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const navLinks = [
   { href: "/", label: "Home", isPage: true },
@@ -16,18 +18,24 @@ const Navigation = () => {
   const { scrollY } = useScroll();
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme } = useTheme();
   
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 100],
-    ["rgba(8, 8, 8, 0)", "rgba(8, 8, 8, 0.95)"]
+  const bgColors = useMemo(() => 
+    theme === "dark" 
+      ? ["rgba(8, 8, 8, 0)", "rgba(8, 8, 8, 0.95)"]
+      : ["rgba(240, 237, 231, 0)", "rgba(240, 237, 231, 0.95)"],
+    [theme]
   );
 
-  const borderColor = useTransform(
-    scrollY,
-    [0, 100],
-    ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.05)"]
+  const borderColors = useMemo(() =>
+    theme === "dark"
+      ? ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.05)"]
+      : ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.05)"],
+    [theme]
   );
+
+  const backgroundColor = useTransform(scrollY, [0, 100], bgColors as [string, string]);
+  const borderColor = useTransform(scrollY, [0, 100], borderColors as [string, string]);
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (value) => {
@@ -119,15 +127,17 @@ const Navigation = () => {
               ))}
             </motion.ul>
 
-            {/* CTA button */}
+            {/* Right side: toggle + CTA */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="hidden md:flex items-center gap-4"
             >
+              <ThemeToggle />
               <Link
                 to="/contact"
-                className="hidden md:inline-block px-6 py-2.5 bg-foreground text-background text-sm font-heading font-semibold rounded-lg hover:bg-silver transition-all duration-300"
+                className="px-6 py-2.5 bg-foreground text-background text-sm font-heading font-semibold rounded-lg hover:bg-silver transition-all duration-300"
               >
                 Hire Me
               </Link>
@@ -185,6 +195,14 @@ const Navigation = () => {
               </motion.li>
             ))}
           </ul>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="mt-8"
+          >
+            <ThemeToggle />
+          </motion.div>
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
