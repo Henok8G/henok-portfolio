@@ -33,30 +33,28 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     overlay.style.cssText = `
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 1;
+      z-index: 0;
       pointer-events: none;
       background: ${newTheme === "light" ? "hsl(45, 10%, 95%)" : "hsl(0, 0%, 3%)"};
       clip-path: circle(0px at ${x}px ${y}px);
-      transition: clip-path 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+      transition: clip-path 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
     `;
     document.body.appendChild(overlay);
+
+    // Switch theme immediately so text/colors transition in real-time
+    document.documentElement.classList.toggle("light", newTheme === "light");
+    setTheme(newTheme);
 
     // Trigger the expansion
     requestAnimationFrame(() => {
       overlay.style.clipPath = `circle(${maxDist}px at ${x}px ${y}px)`;
     });
 
-    // Switch theme midway through animation
-    setTimeout(() => {
-      document.documentElement.classList.toggle("light", newTheme === "light");
-      setTheme(newTheme);
-    }, 600);
-
     // Remove overlay after animation completes
     setTimeout(() => {
       overlay.remove();
       setIsTransitioning(false);
-    }, 1300);
+    }, 1700);
   }, [theme, isTransitioning]);
 
   return (
