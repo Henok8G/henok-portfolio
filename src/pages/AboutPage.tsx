@@ -86,7 +86,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative z-10">
       <Navigation />
       
       {/* Hero Section */}
