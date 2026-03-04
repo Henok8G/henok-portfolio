@@ -60,13 +60,29 @@ const projects = [
     link: "https://owner-dashboard-delta.vercel.app",
     img: "/images/cmac.png",
   },
-       {
+    {
     id: 9,
     title: "Staff QR Code scanner",
     category: "System Development",
       description: "Staff QR Code Scanner mobile friendly web scanner integrated with the Attendance Management System staff scan daily QR codes to record attendance quickly and easily.",
     link: "https://staff-scanning-system.vercel.app",
     img: "/images/staffscanner.png",
+  },
+    {
+    id: 10,
+    title: "Stock managment web app",
+    category: "System Development",
+      description: "This a web app dedicated to manage the current stock in a company that works smoothly and not complicated to have access and this is private because of the company privacy.",
+    link: "https://boost-stock-manager.vercel.app",
+    img: "/images/Boost-stock.png",
+  },
+  {
+    id: 11,
+    title: "Store item managing web app",
+    category: "Full Stack developer",
+      description: "This a web app dedicated to manage the current tech items in a store that works smoothly and not complicated to have access and this is private because of the company privacy. And simplify a huge problem for most companies.",
+    link: "http://tech-stock-one.vercel.app",
+    img: "/images/Toe-store.png",
   },
 ];
 
